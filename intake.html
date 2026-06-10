@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Equinoccio Lab — Intake Form</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background: #0D0D0D; color: #E8E8E4; min-height: 100vh; padding: 2rem 1rem; }
+  .container { max-width: 620px; margin: 0 auto; }
+  .header { margin-bottom: 2.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid rgba(138,165,130,0.3); }
+  .brand { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #8AA582; margin-bottom: 0.75rem; }
+  h1 { font-size: 24px; font-weight: 500; color: #E8E8E4; line-height: 1.4; margin-bottom: 0.6rem; }
+  .subtitle { font-size: 14px; color: rgba(232,232,228,0.5); line-height: 1.75; }
+  .lang-toggle { display: flex; gap: 8px; margin-bottom: 2.5rem; }
+  .lang-btn { font-size: 12px; letter-spacing: 0.08em; padding: 6px 18px; border-radius: 2px; cursor: pointer; transition: all 0.2s; border: 1px solid rgba(138,165,130,0.35); background: transparent; color: rgba(232,232,228,0.5); font-family: inherit; }
+  .lang-btn.active { background: #8AA582; border-color: #8AA582; color: #0D0D0D; font-weight: 500; }
+  .block-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(138,165,130,0.55); margin-bottom: 1.25rem; padding-bottom: 0.5rem; border-bottom: 1px solid rgba(138,165,130,0.1); }
+  .question { margin-bottom: 2.25rem; }
+  .q-number { font-size: 11px; color: #8AA582; margin-bottom: 0.4rem; letter-spacing: 0.1em; }
+  label.q-label { display: block; font-size: 16px; font-weight: 700; color: #E8E8E4; margin-bottom: 0.6rem; line-height: 1.5; }
+  .hint { font-size: 13px; color: rgba(232,232,228,0.4); margin-bottom: 0.8rem; line-height: 1.55; font-weight: 400; }
+  input[type="text"], input[type="email"], textarea {
+    width: 100%; background: rgba(232,232,228,0.04); border: 1px solid rgba(138,165,130,0.18);
+    border-radius: 2px; color: #E8E8E4; font-size: 15px; padding: 11px 14px;
+    font-family: inherit; transition: border-color 0.2s; outline: none; line-height: 1.6; font-weight: 400;
+  }
+  input[type="text"]:focus, input[type="email"]:focus, textarea:focus { border-color: #8AA582; }
+  input[type="text"]::placeholder, input[type="email"]::placeholder, textarea::placeholder { color: rgba(232,232,228,0.22); }
+  textarea { resize: vertical; min-height: 95px; }
+  .gap8 { margin-bottom: 8px; }
+  .radio-group { display: flex; flex-direction: column; gap: 8px; }
+  .radio-option { display: flex; align-items: flex-start; gap: 12px; cursor: pointer; padding: 11px 14px; border: 1px solid rgba(138,165,130,0.15); border-radius: 2px; transition: border-color 0.2s; }
+  .radio-option:hover { border-color: rgba(138,165,130,0.4); }
+  .radio-option input { margin-top: 3px; accent-color: #8AA582; flex-shrink: 0; }
+  .radio-option span { font-size: 14px; color: #E8E8E4; line-height: 1.5; font-weight: 400; }
+  .conditional { display: none; margin-top: 1rem; }
+  .conditional.visible { display: block; }
+  .divider { border: none; border-top: 1px solid rgba(138,165,130,0.1); margin: 2rem 0 1.75rem; }
+  .submit-btn { width: 100%; padding: 14px; background: #8AA582; border: none; border-radius: 2px; color: #0D0D0D; font-size: 14px; font-family: inherit; letter-spacing: 0.1em; font-weight: 600; cursor: pointer; transition: background 0.2s; margin-top: 0.5rem; }
+  .submit-btn:hover { background: #7a9572; }
+  .submit-btn:disabled { background: #2a2a2a; color: rgba(232,232,228,0.3); cursor: default; }
+  .footer-note { font-size: 11px; color: rgba(232,232,228,0.25); text-align: center; margin-top: 1.5rem; line-height: 1.7; }
+  .required { color: #8AA582; }
+  .error-msg { font-size: 12px; color: #c47a5a; margin-top: 0.75rem; display: none; }
+  .error-msg.visible { display: block; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <div class="brand">Equinoccio Lab 🌗</div>
+    <h1 id="h-title">Before we talk.</h1>
+    <p class="subtitle" id="h-sub">I don't start from the technology.<br>I start from how you work — and what you're not willing to lose.</p>
+  </div>
+
+  <div class="lang-toggle">
+    <button class="lang-btn active" onclick="setLang('en')">English</button>
+    <button class="lang-btn" onclick="setLang('es')">Español</button>
+  </div>
+
+  <form id="intakeForm">
+
+    <div class="block-label" id="b1-label">Context</div>
+
+    <div class="question">
+      <div class="q-number">01</div>
+      <label class="q-label" id="q1-label">Your name and email. <span class="required">*</span></label>
+      <input type="text" id="q1-name" class="gap8" placeholder="Name / Nombre" required>
+      <input type="email" id="q1-email" placeholder="Email" required>
+    </div>
+
+    <div class="question">
+      <div class="q-number">02</div>
+      <label class="q-label" id="q2-label">Tell me about your company or brand. If you have a team, briefly describe what each person does. <span class="required">*</span></label>
+      <p class="hint" id="q2-hint">Sector, size, what a typical week looks like.</p>
+      <textarea id="q2" required></textarea>
+    </div>
+
+    <hr class="divider">
+
+    <div class="block-label" id="b2-label">Your relationship with technology</div>
+
+    <div class="question">
+      <div class="q-number">03</div>
+      <label class="q-label" id="q3-label">What's the last thing you automated or delegated to a tool — and what did you hesitate about before doing it?</label>
+      <p class="hint" id="q3-hint">If you haven't automated anything yet, tell me why.</p>
+      <textarea id="q3"></textarea>
+    </div>
+
+    <div class="question">
+      <div class="q-number">04</div>
+      <label class="q-label" id="q4-label">How do you want technology to fit into how your team works?</label>
+      <p class="hint" id="q4-hint">Not what tools you use — how you want things to feel.</p>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="techPhil" value="efficiency"><span id="q4-o1">Efficiency first — I want systems that move fast and remove friction</span></label>
+        <label class="radio-option"><input type="radio" name="techPhil" value="balance"><span id="q4-o2">Balance — I want results without burning out my team or losing what makes us human</span></label>
+        <label class="radio-option"><input type="radio" name="techPhil" value="minimal"><span id="q4-o3">Minimal footprint — I want to do more with less, including less technology</span></label>
+        <label class="radio-option"><input type="radio" name="techPhil" value="unsure"><span id="q4-o4">I'm not sure yet — that's part of what I need to figure out</span></label>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="block-label" id="b3-label">Where you are now</div>
+
+    <div class="question">
+      <div class="q-number">05</div>
+      <label class="q-label" id="q5-label">What's not working — or what are you trying to avoid breaking? <span class="required">*</span></label>
+      <p class="hint" id="q5-hint">This can be something already broken or something you want to get right before it goes wrong.</p>
+      <textarea id="q5" required></textarea>
+    </div>
+
+    <div class="question">
+      <div class="q-number">06</div>
+      <label class="q-label" id="q6-label">What are you looking for right now? <span class="required">*</span></label>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="engType" value="pilot" onchange="showCond('pilot')"><span id="q6-o1">A specific problem solved in 2–4 weeks</span></label>
+        <label class="radio-option"><input type="radio" name="engType" value="retainer" onchange="showCond('retainer')"><span id="q6-o2">Ongoing operational support (monthly)</span></label>
+        <label class="radio-option"><input type="radio" name="engType" value="exploring" onchange="showCond('exploring')"><span id="q6-o3">I'm still figuring that out</span></label>
+      </div>
+      <div class="conditional" id="cond-pilot">
+        <textarea id="q6-pilot" placeholder="What's the specific problem?"></textarea>
+      </div>
+      <div class="conditional" id="cond-retainer">
+        <textarea id="q6-retainer" placeholder="What layer of your operation needs the most support?"></textarea>
+      </div>
+      <div class="conditional" id="cond-exploring">
+        <textarea id="q6-exploring" placeholder="What made you reach out now?"></textarea>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="block-label" id="b4-label">One last thing</div>
+
+    <div class="question">
+      <div class="q-number">07</div>
+      <label class="q-label" id="q7-label">What's a decision in your operation you would never hand off to anyone — or anything?</label>
+      <p class="hint" id="q7-hint">No right answer. This tells me where your real line is.</p>
+      <textarea id="q7"></textarea>
+    </div>
+
+    <p class="error-msg" id="submit-error">Something went wrong. Try again or email me directly.</p>
+    <button type="submit" class="submit-btn" id="submit-btn">Send → / Enviar →</button>
+  </form>
+
+  <p class="footer-note" id="footer-note">
+    Equinoccio Lab · Human-Side Operations<br>
+    Your answers go directly to Marcela. No bot reads this before she does.
+  </p>
+
+</div>
+
+<script>
+// ─── CONFIG — reemplazar después del paso 2 ───────────────────────────────────
+const APPS_SCRIPT_URL = 'PASTE_YOUR_APPS_SCRIPT_URL_HERE';
+// ─────────────────────────────────────────────────────────────────────────────
+
+const c = {
+  en: {
+    title: "Before we talk.",
+    sub: "I don't start from the technology.<br>I start from how you work — and what you're not willing to lose.",
+    b1: "Context", b2: "Your relationship with technology", b3: "Where you are now", b4: "One last thing",
+    q1: "Your name and email. *",
+    q2: "Tell me about your company or brand. If you have a team, briefly describe what each person does. *",
+    q2h: "Sector, size, what a typical week looks like.",
+    q3: "What's the last thing you automated or delegated to a tool — and what did you hesitate about before doing it?",
+    q3h: "If you haven't automated anything yet, tell me why.",
+    q4: "How do you want technology to fit into how your team works?",
+    q4h: "Not what tools you use — how you want things to feel.",
+    q4o1: "Efficiency first — I want systems that move fast and remove friction",
+    q4o2: "Balance — I want results without burning out my team or losing what makes us human",
+    q4o3: "Minimal footprint — I want to do more with less, including less technology",
+    q4o4: "I'm not sure yet — that's part of what I need to figure out",
+    q5: "What's not working — or what are you trying to avoid breaking? *",
+    q5h: "This can be something already broken or something you want to get right before it goes wrong.",
+    q6: "What are you looking for right now? *",
+    q6o1: "A specific problem solved in 2–4 weeks",
+    q6o2: "Ongoing operational support (monthly)",
+    q6o3: "I'm still figuring that out",
+    q6pp: "What's the specific problem?",
+    q6rp: "What layer of your operation needs the most support?",
+    q6ep: "What made you reach out now?",
+    q7: "What's a decision in your operation you would never hand off to anyone — or anything?",
+    q7h: "No right answer. This tells me where your real line is.",
+    submit: "Send →",
+    sending: "Sending...",
+    sent: "Sent. Talk soon.",
+    error: "Something went wrong. Try again or email me directly.",
+    footer: "Equinoccio Lab · Human-Side Operations<br>Your answers go directly to Marcela. No bot reads this before she does."
+  },
+  es: {
+    title: "Antes de hablar.",
+    sub: "No empiezo por la tecnología.<br>Empiezo por cómo trabajas — y por lo que no estás dispuesto a perder.",
+    b1: "Contexto", b2: "Tu relación con la tecnología", b3: "Dónde estás ahora", b4: "Una última cosa",
+    q1: "Tu nombre y correo. *",
+    q2: "Cuéntame sobre tu empresa o marca. Si tienes equipo, describe brevemente qué hace cada persona. *",
+    q2h: "Sector, tamaño, cómo se ve una semana típica.",
+    q3: "¿Qué fue lo último que automatizaste o delegaste a una herramienta — y en qué dudaste antes de hacerlo?",
+    q3h: "Si no has automatizado nada todavía, cuéntame por qué.",
+    q4: "¿Cómo quieres que la tecnología encaje en la forma en que trabaja tu equipo?",
+    q4h: "No qué herramientas usas — cómo quieres que se sienta.",
+    q4o1: "Eficiencia primero — quiero sistemas que se muevan rápido y eliminen fricción",
+    q4o2: "Equilibrio — quiero resultados sin quemar a mi equipo ni perder lo que nos hace humanos",
+    q4o3: "Huella mínima — quiero hacer más con menos, incluyendo menos tecnología",
+    q4o4: "Todavía no estoy seguro — eso es parte de lo que necesito definir",
+    q5: "¿Qué no está funcionando — o qué estás intentando evitar que se rompa? *",
+    q5h: "Puede ser algo ya roto o algo que quieres hacer bien antes de que salga mal.",
+    q6: "¿Qué estás buscando ahora mismo? *",
+    q6o1: "Un problema específico resuelto en 2–4 semanas",
+    q6o2: "Apoyo operativo continuo (mensual)",
+    q6o3: "Todavía lo estoy definiendo",
+    q6pp: "¿Cuál es el problema específico?",
+    q6rp: "¿Qué capa de tu operación necesita más apoyo?",
+    q6ep: "¿Qué te hizo llegar ahora?",
+    q7: "¿Qué decisión en tu operación nunca delegarías a nadie — ni a nada?",
+    q7h: "No hay respuesta correcta. Esto me dice dónde está tu límite real.",
+    submit: "Enviar →",
+    sending: "Enviando...",
+    sent: "Enviado. Hablamos pronto.",
+    error: "Algo salió mal. Intenta de nuevo o escríbeme directamente.",
+    footer: "Equinoccio Lab · Human-Side Operations<br>Tus respuestas van directo a Marcela. Ningún bot las lee antes que ella."
+  }
+};
+
+let lang = 'en';
+
+function setLang(l) {
+  lang = l;
+  const d = c[l];
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+  document.querySelector(`.lang-btn[onclick="setLang('${l}')"]`).classList.add('active');
+  document.getElementById('h-title').textContent = d.title;
+  document.getElementById('h-sub').innerHTML = d.sub;
+  document.getElementById('b1-label').textContent = d.b1;
+  document.getElementById('b2-label').textContent = d.b2;
+  document.getElementById('b3-label').textContent = d.b3;
+  document.getElementById('b4-label').textContent = d.b4;
+  document.getElementById('q1-label').innerHTML = d.q1.replace('*','<span class="required">*</span>');
+  document.getElementById('q2-label').innerHTML = d.q2.replace('*','<span class="required">*</span>');
+  document.getElementById('q2-hint').textContent = d.q2h;
+  document.getElementById('q3-label').textContent = d.q3;
+  document.getElementById('q3-hint').textContent = d.q3h;
+  document.getElementById('q4-label').textContent = d.q4;
+  document.getElementById('q4-hint').textContent = d.q4h;
+  document.getElementById('q4-o1').textContent = d.q4o1;
+  document.getElementById('q4-o2').textContent = d.q4o2;
+  document.getElementById('q4-o3').textContent = d.q4o3;
+  document.getElementById('q4-o4').textContent = d.q4o4;
+  document.getElementById('q5-label').innerHTML = d.q5.replace('*','<span class="required">*</span>');
+  document.getElementById('q5-hint').textContent = d.q5h;
+  document.getElementById('q6-label').innerHTML = d.q6.replace('*','<span class="required">*</span>');
+  document.getElementById('q6-o1').textContent = d.q6o1;
+  document.getElementById('q6-o2').textContent = d.q6o2;
+  document.getElementById('q6-o3').textContent = d.q6o3;
+  document.getElementById('q6-pilot').placeholder = d.q6pp;
+  document.getElementById('q6-retainer').placeholder = d.q6rp;
+  document.getElementById('q6-exploring').placeholder = d.q6ep;
+  document.getElementById('q7-label').textContent = d.q7;
+  document.getElementById('q7-hint').textContent = d.q7h;
+  const btn = document.getElementById('submit-btn');
+  if (!btn.disabled) btn.textContent = d.submit;
+  document.getElementById('submit-error').textContent = d.error;
+  document.getElementById('footer-note').innerHTML = d.footer;
+}
+
+function showCond(type) {
+  ['pilot','retainer','exploring'].forEach(t => {
+    document.getElementById('cond-' + t).classList.toggle('visible', t === type);
+  });
+}
+
+document.getElementById('intakeForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const btn = document.getElementById('submit-btn');
+  const errMsg = document.getElementById('submit-error');
+  const d = c[lang];
+
+  const payload = {
+    timestamp: new Date().toISOString(),
+    lang: lang,
+    name:          document.getElementById('q1-name').value.trim(),
+    email:         document.getElementById('q1-email').value.trim(),
+    company:       document.getElementById('q2').value.trim(),
+    automation:    document.getElementById('q3').value.trim(),
+    techPhil:      (document.querySelector('input[name="techPhil"]:checked') || {}).value || '',
+    broken:        document.getElementById('q5').value.trim(),
+    engType:       (document.querySelector('input[name="engType"]:checked') || {}).value || '',
+    engDetail:     document.getElementById('q6-pilot').value.trim() ||
+                   document.getElementById('q6-retainer').value.trim() ||
+                   document.getElementById('q6-exploring').value.trim(),
+    neverDelegate: document.getElementById('q7').value.trim()
+  };
+
+  btn.textContent = d.sending;
+  btn.disabled = true;
+  errMsg.classList.remove('visible');
+
+  try {
+    await fetch(APPS_SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors', // requerido por Apps Script
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    btn.textContent = d.sent;
+  } catch (err) {
+    btn.textContent = d.submit;
+    btn.disabled = false;
+    errMsg.classList.add('visible');
+    console.error('Submit error:', err);
+  }
+});
+</script>
+</body>
+</html>
