@@ -1,94 +1,242 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Equinoccio Lab</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Georgia', serif;
-      background: #F5F0EA;
-      color: #1A1A1A;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .container {
-      max-width: 640px;
-      padding: 60px 40px;
-      text-align: left;
-    }
-    .eyebrow {
-      font-family: 'Courier New', monospace;
-      font-size: 11px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: #C4724A;
-      margin-bottom: 32px;
-    }
-    h1 {
-      font-size: 42px;
-      font-weight: normal;
-      line-height: 1.2;
-      margin-bottom: 32px;
-      color: #1A1A1A;
-    }
-    h1 em {
-      font-style: italic;
-      color: #C4724A;
-    }
-    p {
-      font-size: 17px;
-      line-height: 1.8;
-      color: #444;
-      margin-bottom: 20px;
-    }
-    .divider {
-      width: 40px;
-      height: 1px;
-      background: #C4724A;
-      margin: 40px 0;
-    }
-    .contact {
-      font-family: 'Courier New', monospace;
-      font-size: 13px;
-      letter-spacing: 1px;
-      color: #1A1A1A;
-    }
-    .contact a {
-      color: #C4724A;
-      text-decoration: none;
-    }
-    .contact a:hover {
-      text-decoration: underline;
-    }
-    .coming-soon {
-      font-family: 'Courier New', monospace;
-      font-size: 11px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: #999;
-      margin-top: 60px;
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
 </head>
 <body>
-  <div class="container">
-    <div class="eyebrow">Equinoccio Lab</div>
-    <h1>Someone has to stay on the <em>human side.</em></h1>
-    <p>Human-Side Operations · AI Governance · Latin America</p>
-    <div class="divider"></div>
-    <p>The technology is the easy part. I work with founders navigating the gap between what AI promises and what their teams can actually carry.</p>
-    <p>Operational translation, AI governance, and the infrastructure that makes transformation hold.</p>
-    <div class="divider"></div>
-    <div class="contact">
-      <a href="https://linkedin.com/in/marpomac">LinkedIn</a>
-      &nbsp;·&nbsp;
-      <a href="mailto:marcepolancova@gmail.com">marcepolancova@gmail.com</a>
+<x-dc>
+<helmet>
+  <style>
+    @font-face { font-family: 'Posterama'; src: url('./fonts/posterama-thin.otf') format('opentype'); font-weight: 100; font-display: swap; }
+    @font-face { font-family: 'Posterama'; src: url('./fonts/posterama-light.otf') format('opentype'); font-weight: 300; font-display: swap; }
+    @font-face { font-family: 'Posterama'; src: url('./fonts/posterama-regular.otf') format('opentype'); font-weight: 400; font-display: swap; }
+    @font-face { font-family: 'Posterama'; src: url('./fonts/posterama-semibold.otf') format('opentype'); font-weight: 600; font-display: swap; }
+    @font-face { font-family: 'Posterama'; src: url('./fonts/posterama-bold.otf') format('opentype'); font-weight: 800; font-display: swap; }
+    @font-face { font-family: 'DreamingOutloud'; src: url('./fonts/dreaming-outloud-pro-regular.otf') format('opentype'); font-display: swap; }
+    body { margin: 0; background: #06263E; }
+    a { color: #F2BC1B; }
+    a:hover { color: #FFD65C; }
+    * { box-sizing: border-box; }
+    @keyframes fadeRise { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    .fr-1 { animation: fadeRise 0.9s ease-out both; }
+    .fr-2 { animation: fadeRise 0.9s ease-out 0.18s both; }
+    .fr-3 { animation: fadeRise 0.9s ease-out 0.36s both; }
+    .glass { background: rgba(255,255,255,0.06); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border: 1px solid rgba(255,255,255,0.16); }
+    @media (max-width: 640px) {
+      .nav-row { flex-wrap: wrap; gap: 12px; padding: 16px 20px !important; }
+      .quien-soy-grid { grid-template-columns: 1fr !important; text-align: center; }
+      .quien-soy-grid .btn-row { justify-content: center; }
+      .quien-soy-photo { margin: 0 auto; }
+    }
+  </style>
+  <script src="./image-slot.js"></script>
+</helmet>
+
+<div style="font-family: 'Posterama', sans-serif; font-weight: 400; background: #06263E; color: #F5F0E8; overflow-x: hidden;">
+
+  <video autoplay="true" loop="true" muted="true" playsinline="true" style="position: fixed; inset: 0; z-index: 0; width: 100%; height: 100%; object-fit: cover;">
+    <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260314_131748_f2ca2a28-fed7-44c8-b9a9-bd9acdd5ec31.mp4" type="video/mp4" />
+  </video>
+  <div style="position: fixed; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(6,38,62,0.35) 0%, rgba(111,115,14,0.18) 45%, rgba(6,38,62,0.5) 100%); pointer-events: none;"></div>
+
+  <!-- HERO -->
+  <section style="position: relative; z-index: 2; min-height: 100vh; display: flex; flex-direction: column;">
+
+    <!-- NAV -->
+    <div class="nav-row" style="position: relative; z-index: 3; display: flex; align-items: center; justify-content: space-between; padding: 24px 40px; max-width: 1280px; margin: 0 auto; width: 100%;">
+      <div style="display: flex; align-items: center; gap: 14px; border: 1px solid rgba(245,240,232,0.35); border-radius: 4px; padding: 8px 18px 8px 8px; position: relative;">
+        <div style="position: absolute; top: -1px; left: -1px; width: 10px; height: 10px; border-top: 1.5px solid #F2BC1B; border-left: 1.5px solid #F2BC1B;"></div>
+        <div style="position: absolute; bottom: -1px; right: -1px; width: 10px; height: 10px; border-bottom: 1.5px solid #F2BC1B; border-right: 1.5px solid #F2BC1B;"></div>
+        <img src="./assets/logo-elab-transparent.png" alt="Equinoccio Lab" style="height: 44px; width: auto;" />
+        <span style="font-family: 'Posterama', sans-serif; font-weight: 600; font-size: 19px; letter-spacing: 0.02em; color: #F5F0E8; line-height: 1;">Equinoccio Lab</span>
+      </div>
+      <div style="display: none; gap: 32px;" class="nav-links-desktop">
+        <a href="#capacidades" style="font-size: 14px; text-decoration: none; color: #F5F0E8; font-weight: 400; opacity: 0.85;">{{ t.navCapacidades }}</a>
+        <a href="#servicios" style="font-size: 14px; text-decoration: none; color: #F5F0E8; font-weight: 400; opacity: 0.85;">{{ t.navServicios }}</a>
+        <a href="#contacto" style="font-size: 14px; text-decoration: none; color: #F5F0E8; font-weight: 400; opacity: 0.85;">{{ t.navContacto }}</a>
+      </div>
+      <div style="display: flex; align-items: center; gap: 14px;">
+        <div style="display: flex; gap: 4px;">
+          <button onclick="{{ setLangEs }}" style="border: none; background: none; cursor: pointer; font-size: 13px; font-weight: 700; padding: 4px 8px; color: {{ esColor }}; font-family: 'Posterama', sans-serif;">ES</button>
+          <button onclick="{{ setLangEn }}" style="border: none; background: none; cursor: pointer; font-size: 13px; font-weight: 700; padding: 4px 8px; color: {{ enColor }}; font-family: 'Posterama', sans-serif;">EN</button>
+        </div>
+        <a href="mailto:marpolanco.elab@outlook.com" class="glass" style="border-radius: 999px; padding: 10px 22px; font-size: 14px; color: #F5F0E8; text-decoration: none; font-weight: 600;">{{ t.ctaEmail }}</a>
+      </div>
     </div>
-    <div class="coming-soon">Full site coming soon</div>
+
+    <!-- HERO CONTENT -->
+    <div style="position: relative; z-index: 3; flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 40px 24px 100px; max-width: 1000px; margin: 0 auto;">
+      <div class="fr-1" style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #A4B02C; margin-bottom: 26px; font-weight: 700;">
+        {{ t.heroKicker }}
+      </div>
+      <h1 class="fr-1" style="font-size: clamp(40px, 7vw, 96px); line-height: 0.98; font-weight: 800; letter-spacing: -0.02em; margin: 0 0 28px;">
+        {{ t.heroTitleA }} <em style="font-style: normal; color: #A4B02C; font-weight: 300;">{{ t.heroTitleB }}</em>
+      </h1>
+      <p class="fr-2" style="font-family: 'DreamingOutloud', cursive; font-size: clamp(20px, 2vw, 25px); line-height: 1.55; max-width: 640px; color: #F5F0E8; opacity: 0.9; font-weight: 400; margin: 0 0 44px;">
+        {{ t.heroSub }}
+      </p>
+      <a href="mailto:marpolanco.elab@outlook.com" class="fr-3 glass" style="border-radius: 999px; padding: 18px 48px; font-size: 15px; color: #F5F0E8; text-decoration: none; font-weight: 700; letter-spacing: 0.02em; border-color: rgba(164,176,44,0.5);">
+        {{ t.ctaHero }}
+      </a>
+    </div>
+  </section>
+
+  <!-- QUIEN SOY -->
+  <section id="quien-soy" style="position: relative; z-index: 2; padding: 120px 28px;">
+    <div class="glass quien-soy-grid" style="max-width: 980px; margin: 0 auto; background: rgba(245,240,232,0.55); backdrop-filter: blur(22px); -webkit-backdrop-filter: blur(22px); color: #06263E; border-radius: 28px; padding: clamp(28px, 5vw, 56px); border-color: rgba(6,38,62,0.12); display: grid; grid-template-columns: 220px 1fr; gap: 44px; align-items: center;">
+      <image-slot id="foto-marcela" class="quien-soy-photo" shape="rounded" radius="20" placeholder="foto de Marcela" src="./assets/foto-marcela.jpg" style="width: min(220px, 60vw); height: 260px;"></image-slot>
+      <div>
+        <div style="font-size: 12px; letter-spacing: 0.2em; color: #8C0303; margin-bottom: 18px; font-weight: 700;">{{ t.quienSoyLabel }}</div>
+        <p style="font-size: clamp(22px, 2.6vw, 28px); line-height: 1.3; font-weight: 700; margin: 0 0 24px; letter-spacing: -0.01em;">
+          {{ t.quienSoyLead }}
+        </p>
+        <div class="btn-row" style="display: flex; flex-wrap: wrap; gap: 14px;">
+          <a href="https://www.linkedin.com/in/marpomac/" target="_blank" style="display: inline-flex; align-items: center; gap: 8px; background: #06263E; color: #F5F0E8; text-decoration: none; padding: 13px 26px; border-radius: 999px; font-size: 14px; font-weight: 700;">LinkedIn</a>
+          <a href="https://wa.me/573006243821" target="_blank" style="display: inline-flex; align-items: center; gap: 8px; background: #6F730E; color: #F5F0E8; text-decoration: none; padding: 13px 26px; border-radius: 999px; font-size: 14px; font-weight: 700;">{{ t.hablemos }}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAPACIDADES -->
+  <section id="capacidades" style="position: relative; z-index: 2; padding: 120px 28px; max-width: 1200px; margin: 40px auto; color: #06263E;">
+    <h2 style="font-size: clamp(28px, 4.2vw, 46px); font-weight: 800; margin: 0 auto 56px; max-width: 680px; letter-spacing: -0.01em; color: #F5F0E8; text-align: center;">{{ t.capacidadesTitle }}</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 4px; border-radius: 24px; overflow: hidden;">
+      <sc-for list="{{ capacidades }}" as="cap" hint-placeholder-count="4">
+        <div style="background: {{ cap.bg }}; backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); padding: 32px 28px; min-height: 200px; display: flex; flex-direction: column; justify-content: flex-end;">
+          <h3 style="font-size: 20px; font-weight: 700; margin: 0 0 10px; color: #F5F0E8;">{{ cap.title }}</h3>
+          <p style="font-size: 14px; line-height: 1.55; margin: 0; font-weight: 300; color: #F5F0E8; opacity: 0.9;">{{ cap.body }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" style="position: relative; z-index: 2; padding: 120px 28px; color: #F5F0E8;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <div style="text-align: center; margin: 0 auto 56px; max-width: 680px;">
+        <div style="font-size: 12px; letter-spacing: 0.2em; color: #F2BC1B; margin-bottom: 20px; font-weight: 700;">{{ t.serviciosLabel }}</div>
+        <h2 style="font-size: clamp(28px, 4.2vw, 46px); font-weight: 800; margin: 0 0 22px; letter-spacing: -0.01em;">{{ t.serviciosTitle }}</h2>
+        <p style="font-family: 'DreamingOutloud', cursive; font-size: 22px; line-height: 1.6; opacity: 0.85; margin: 0; font-weight: 400;">{{ t.serviciosSub }}</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+        <div class="glass" style="border-radius: 20px; padding: 36px;">
+          <div style="font-size: 12px; letter-spacing: 0.12em; color: #F2BC1B; font-weight: 700; margin-bottom: 16px;">{{ t.pilotoTag }}</div>
+          <h3 style="font-size: 22px; font-weight: 700; margin: 0 0 12px;">{{ t.pilotoTitle }}</h3>
+          <p style="font-size: 15px; line-height: 1.65; opacity: 0.8; margin: 0; font-weight: 300;">{{ t.pilotoBody }}</p>
+        </div>
+        <div class="glass" style="border-radius: 20px; padding: 36px;">
+          <div style="font-size: 12px; letter-spacing: 0.12em; color: #6F730E; font-weight: 700; margin-bottom: 16px;">{{ t.retainerTag }}</div>
+          <h3 style="font-size: 22px; font-weight: 700; margin: 0 0 12px;">{{ t.retainerTitle }}</h3>
+          <p style="font-size: 15px; line-height: 1.65; opacity: 0.8; margin: 0; font-weight: 300;">{{ t.retainerBody }}</p>
+        </div>
+        <div style="border-radius: 20px; padding: 36px; border: 1.5px dashed rgba(140,3,3,0.55); display: flex; flex-direction: column; justify-content: center;">
+          <div style="font-size: 12px; letter-spacing: 0.12em; color: #8C0303; font-weight: 700; margin-bottom: 16px;">{{ t.masTag }}</div>
+          <p style="font-size: 15px; line-height: 1.65; opacity: 0.75; margin: 0; font-weight: 300;">{{ t.masBody }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" style="padding: 140px 28px; position: relative; z-index: 2; color: #F5F0E8;">
+    <div class="glass" style="max-width: 640px; margin: 0 auto; text-align: center; background: rgba(140,3,3,0.35); border-radius: 24px; padding: 48px 40px;">
+      <div style="font-size: 12px; letter-spacing: 0.2em; color: rgba(245,240,232,0.75); margin-bottom: 18px; font-weight: 700;">{{ t.contactoLabel }}</div>
+      <h2 style="font-size: clamp(26px, 3.4vw, 38px); font-weight: 800; margin: 0 0 30px; letter-spacing: -0.01em;">{{ t.contactoTitle }}</h2>
+      <div style="display: flex; flex-wrap: wrap; gap: 14px; justify-content: center;">
+        <a href="https://wa.me/573006243821" target="_blank" class="glass" style="display: inline-flex; align-items: center; gap: 8px; color: #F5F0E8; text-decoration: none; padding: 16px 32px; border-radius: 999px; font-size: 15px; font-weight: 700;">{{ t.contactame }}</a>
+        <a href="mailto:marpolanco.elab@outlook.com" class="glass" style="display: inline-flex; align-items: center; gap: 8px; color: #F5F0E8; text-decoration: none; padding: 16px 32px; border-radius: 999px; font-size: 15px; font-weight: 700;">{{ t.solicitaConsulta }}</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <div style="position: relative; z-index: 2; display: flex; flex-direction: column; gap: 18px; align-items: center; justify-content: center; padding: 40px; background: rgba(6,38,62,0.7); backdrop-filter: blur(12px); font-size: 11px; letter-spacing: 0.1em; color: rgba(245,240,232,0.6); font-weight: 300;">
+    <div style="display: flex; gap: 32px;">
+      <a href="https://www.linkedin.com/in/marpomac/" target="_blank" style="color: #F5F0E8; opacity: 1; text-decoration: none; font-size: 15px; font-weight: 700; letter-spacing: 0.03em;">LinkedIn</a>
+      <a href="https://www.instagram.com/equinocciolab/" target="_blank" style="color: #F5F0E8; opacity: 1; text-decoration: none; font-size: 15px; font-weight: 700; letter-spacing: 0.03em;">Instagram</a>
+    </div>
+    <span>{{ t.footerRights }}</span>
   </div>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const STRINGS = {
+  es: {
+    navCapacidades: 'Capacidades', navServicios: 'Servicios', navContacto: 'Contacto',
+    heroKicker: 'HUMAN-SIDE OPERATIONS',
+    heroTitleA: 'Alguien tiene que quedarse', heroTitleB: 'del lado humano.',
+    heroSub: 'Trabajo con fundadores que están adoptando IA y cuya operación todavía no está lista para recibirla. La tecnología no es lo difícil. Lo difícil es el criterio.',
+    ctaEmail: 'Escribime', ctaHero: 'Comienza aquí', hablemos: 'Hablemos',
+    heroImagePlaceholder: 'video o imagen inmersiva de fondo — pantalla completa',
+    quienSoyLabel: 'QUIÉN SOY',
+    quienSoyLead: 'Soy Marcela Polanco, consultora de operaciones latina. Ocho años traduciendo visión en sistemas operativos humanos.',
+    quienSoyBody: 'Trabajo remoto con empresas pequeñas y fundadores que necesitan que su operación funcione, con o sin IA de por medio. Mi diferenciador no es tecnología, es criterio.',
+    capacidadesLabel: 'CAPACIDADES', capacidadesTitle: 'Cuatro formas de intervenir en tu operación.',
+    serviciosLabel: 'SERVICIOS', serviciosTitle: 'El menú todavía se está definiendo.',
+    serviciosSub: 'Por ahora, dos formas de trabajar juntos. El catálogo completo llega pronto, este espacio queda reservado para eso.',
+    pilotoTag: 'PILOTO', pilotoTitle: '2–4 semanas', pilotoBody: 'Un problema específico, alcance acotado. Sirve para construir un caso demostrable antes de comprometerse a más.',
+    retainerTag: 'RETAINER', retainerTitle: 'Apoyo operativo continuo', retainerBody: 'Traducción de objetivos, alerta temprana, facilitación entre áreas, documentación de procesos, acompañamiento en adopción de IA.',
+    masTag: 'PRÓXIMAMENTE', masBody: 'Catálogo de servicios en construcción. Vuelve pronto o escribime directamente.',
+    contactoLabel: 'CONTACTO', contactoTitle: 'Si tu operación no está lista para lo que la IA promete, hablemos.', contactame: 'Contáctame', solicitaConsulta: 'Solicita una consulta',
+    footerRights: 'Equinoccio Lab'
+  },
+  en: {
+    navCapacidades: 'Capabilities', navServicios: 'Services', navContacto: 'Contact',
+    heroKicker: 'HUMAN-SIDE OPERATIONS',
+    heroTitleA: 'Someone has to stay', heroTitleB: 'on the human side.',
+    heroSub: "I work with founders adopting AI whose operations aren't ready to receive it. The technology isn't the hard part. Judgment is.",
+    ctaEmail: 'Email me', ctaHero: 'Start here', hablemos: "Let's talk",
+    heroImagePlaceholder: 'immersive background video or image — fullscreen',
+    quienSoyLabel: 'ABOUT',
+    quienSoyLead: "I'm Marcela Polanco, a Latina operations consultant. Eight years translating vision into human operating systems.",
+    quienSoyBody: "I work remotely with small companies and founders who need their operation to work, with or without AI in the mix. My differentiator isn't technology, it's judgment.",
+    capacidadesLabel: 'CAPABILITIES', capacidadesTitle: 'Four ways to intervene in your operation.',
+    serviciosLabel: 'SERVICES', serviciosTitle: 'The menu is still being defined.',
+    serviciosSub: 'For now, two ways to work together. The full catalog is coming soon, this space is reserved for it.',
+    pilotoTag: 'PILOT', pilotoTitle: '2–4 weeks', pilotoBody: 'One specific problem, tight scope. Builds a demonstrable case before committing to more.',
+    retainerTag: 'RETAINER', retainerTitle: 'Ongoing operational support', retainerBody: 'Goal translation, early warning, cross-team facilitation, process documentation, AI-adoption support.',
+    masTag: 'COMING SOON', masBody: 'Services catalog in progress. Check back soon or write to me directly.',
+    contactoLabel: 'CONTACT', contactoTitle: "If your operation isn't ready for what AI promises, let's talk.", contactame: 'Contact me', solicitaConsulta: 'Request a consult',
+    footerRights: 'Equinoccio Lab'
+  }
+};
+
+const CAPACIDADES = {
+  es: [
+    { bg: 'rgba(245,240,232,0.5)', textColor: '#06263E', title: 'Traducción estratégica', body: 'Convierto objetivos difusos en entregables concretos con dueño, fecha y criterio de éxito.' },
+    { bg: 'rgba(242,188,27,0.5)', textColor: '#06263E', title: 'Alerta temprana', body: 'Anticipo fricción antes de que se convierta en crisis. No solo hago seguimiento — alzo la mano a tiempo.' },
+    { bg: 'rgba(140,3,3,0.55)', textColor: '#F5F0E8', title: 'Traducción entre lenguajes internos', body: 'Pongo en sincronía a personas que hablan idiomas operativos distintos: desarrollo, marketing, founder, automatización.' },
+    { bg: 'rgba(6,38,62,0.55)', textColor: '#F5F0E8', title: 'Gobernanza con IA', body: 'Decido cómo interactúan humanos y máquinas dentro de las organizaciones. Qué se pierde cuando automatizas antes de entender.' }
+  ],
+  en: [
+    { bg: 'rgba(245,240,232,0.5)', textColor: '#06263E', title: 'Strategic translation', body: 'I turn fuzzy goals into concrete deliverables with an owner, a date, and a success criteria.' },
+    { bg: 'rgba(242,188,27,0.5)', textColor: '#06263E', title: 'Early warning', body: "I anticipate friction before it becomes a crisis. I don't just follow up — I raise my hand in time." },
+    { bg: 'rgba(140,3,3,0.55)', textColor: '#F5F0E8', title: 'Cross-language translation', body: 'I sync up people speaking different operational languages: development, marketing, founder, automation.' },
+    { bg: 'rgba(6,38,62,0.55)', textColor: '#F5F0E8', title: 'AI governance', body: 'I decide how humans and machines interact inside organizations. What gets lost when you automate before you understand.' }
+  ]
+};
+
+class Component extends DCLogic {
+  state = { lang: 'es' };
+  renderVals() {
+    const lang = this.state.lang;
+    return {
+      t: STRINGS[lang],
+      capacidades: CAPACIDADES[lang],
+      esColor: lang === 'es' ? '#F2BC1B' : 'rgba(245,240,232,0.4)',
+      enColor: lang === 'en' ? '#F2BC1B' : 'rgba(245,240,232,0.4)',
+      setLangEs: () => this.setState({ lang: 'es' }),
+      setLangEn: () => this.setState({ lang: 'en' })
+    };
+  }
+}
+
+</script>
 </body>
 </html>
